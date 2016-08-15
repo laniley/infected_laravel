@@ -1,7 +1,7 @@
 /vendor
 /node_modules
 /public/storage
+/config/app.php
 Homestead.yaml
 Homestead.json
-AppServiceProvider.php
 .env

@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group([
+  'prefix' => '/api/',
+  'middleware' => 'cors'
+], function()
+{
+    Route::resource('users', 'UserController');
 });

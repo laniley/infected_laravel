@@ -23,9 +23,12 @@ class UserController extends Controller
 
         $users = $users->get();
 
-        if(isset($mode) && $mode == "me") {
+        if(isset($mode) && $mode == "me" && count($users) > 0) {
           $user = $users[0];
           $infections = Infection::where('user_id', $user->id)->get();
+        }
+        else {
+          $infections = '[]';
         }
 
         return '{ "users": '.$users.', "infections": '.$infections.'}';

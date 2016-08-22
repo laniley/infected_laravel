@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use DB;
+
 class User extends Authenticatable
 {
     /**
@@ -26,5 +28,9 @@ class User extends Authenticatable
 
     public function infections() {
       $this->hasMany('Infection');
+    }
+
+    public function getCurrentInfectionAmount() {
+      return DB::table('infections')->where('user_id', $this->attributes['id'])->count();
     }
 }

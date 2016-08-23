@@ -19,5 +19,6 @@ Route::group([
     Route::resource('users', 'UserController');
     Route::resource('infections', 'InfectionController');
     Route::resource('infectionSkills', 'InfectionSkillController');
+    Route::resource('infectionSkillProgresses', 'InfectionSkillProgressController');
     Route::resource('infectionSkillTypes', 'InfectionSkillTypeController');
 });

@@ -18,4 +18,6 @@ Route::group([
 {
     Route::resource('users', 'UserController');
     Route::resource('infections', 'InfectionController');
+    Route::resource('infectionSkills', 'InfectionSkillController');
+    Route::resource('infectionSkillTypes', 'InfectionSkillTypeController');
 });

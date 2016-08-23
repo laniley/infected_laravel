@@ -15,6 +15,7 @@ class CreateInfectionSkillsTable extends Migration
         Schema::create('infection_skills', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 250)->unique();
+            $table->string('tooltip', 4000);
             $table->integer('infection_skill_type_id')->unsigned();
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

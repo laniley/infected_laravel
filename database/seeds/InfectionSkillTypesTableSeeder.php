@@ -19,11 +19,13 @@ class InfectionSkillTypesTableSeeder extends Seeder
         DB::table($this->table)->truncate();
 
         InfectionSkillType::create(array(
-          'name' => 'distribution'
+          'name' => 'distribution',
+          'tooltip' => 'These are the values that define how fast the distribution of your infection will proceed.'
         ));
 
         InfectionSkillType::create(array(
-          'name' => 'defense'
+          'name' => 'defense',
+          'tooltip' => 'Higher defense skills make your infection harder to cure.'
         ));
     }
 }

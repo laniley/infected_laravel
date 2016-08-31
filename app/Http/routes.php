@@ -13,7 +13,8 @@
 
 Route::group([
   'prefix' => '/api/',
-  'middleware' => 'cors'
+  'middleware' => 'cors',
+  // 'middleware' => 'auth'
 ], function()
 {
     Route::resource('users', 'UserController');

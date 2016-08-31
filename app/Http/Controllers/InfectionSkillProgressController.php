@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 
 use App\Http\Requests;
+use App\InfectionSkillProgress;
 
 class InfectionSkillProgressController extends Controller
 {
@@ -25,5 +26,31 @@ class InfectionSkillProgressController extends Controller
           ->get();
 
       return '{ "infectionSkillProgresses": '.json_encode($infectionSkillProgresses).' }';
+  }
+
+  public function store(Request $request)
+  {
+      $infectionSkillProgress = InfectionSkillProgress::firstOrCreate(array(
+        'infection_id' => $request->input('infectionSkillProgress.infection_id'),
+        'infection_skill_id' => $request->input('infectionSkillProgress.infection_skill_id')
+      ));
+
+      $infectionSkillProgress->progress = $request->input('infectionSkillProgress.progress');
+      $infectionSkillProgress->save();
+
+      return '{ "infectionSkillProgress": '.$infectionSkillProgress.' }';
+  }
+
+  public function update(Request $request)
+  {
+      $infectionSkillProgress = InfectionSkillProgress::firstOrCreate(array(
+        'infection_id' => $request->input('infectionSkillProgress.infection_id'),
+        'infection_skill_id' => $request->input('infectionSkillProgress.infection_skill_id')
+      ));
+
+      $infectionSkillProgress->progress = $request->input('infectionSkillProgress.progress');
+      $infectionSkillProgress->save();
+
+      return '{ "infectionSkillProgress": '.$infectionSkillProgress.' }';
   }
 }

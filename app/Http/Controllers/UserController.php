@@ -42,7 +42,9 @@ class UserController extends Controller
 
         $user->first_name = $request->input('user.first_name');
         $user->last_name = $request->input('user.last_name');
-
+        $user->gender = $request->input('user.gender');
+        $user->locale = $request->input('user.locale');
+        $user->api_token = $request->header()["authorization"][0];
         $user->save();
 
         return '{"user":'.$user.'}';
@@ -50,14 +52,20 @@ class UserController extends Controller
 
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return '{"user":'.$user.'}';
     }
 
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
+        $user->first_name = $request->input('user.first_name');
+        $user->last_name = $request->input('user.last_name');
+        $user->gender = $request->input('user.gender');
+        $user->locale = $request->input('user.locale');
         $user->last_login_at = $user->updated_at;
         $user->save();
+
         return '{"user":'.$user.'}';
     }
 

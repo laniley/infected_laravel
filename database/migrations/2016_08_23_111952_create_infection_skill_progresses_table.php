@@ -13,6 +13,7 @@ class CreateInfectionSkillProgressesTable extends Migration
     public function up()
     {
         Schema::create('infection_skill_progresses', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('infection_id')->unsigned();
             $table->integer('infection_skill_id')->unsigned();
             $table->integer('progress')->unsigned();
@@ -23,7 +24,7 @@ class CreateInfectionSkillProgressesTable extends Migration
             $table->foreign('infection_id')->references('id')->on('infections');
             $table->foreign('infection_skill_id')->references('id')->on('infection_skills');
 
-            $table->primary(array('infection_id', 'infection_skill_id'), 'inf_id_skill_id');
+            $table->unique(array('infection_id', 'infection_skill_id'), 'inf_id_skill_id');
         });
     }
 

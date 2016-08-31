@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "142e392000bad912d7e320c4e45f7f3b",
-    "content-hash": "efb0dcf9454cdb1f7f293b5d6a41200c",
+    "hash": "3a8b7078b113e41c4e5a325f580f1c7d",
+    "content-hash": "82abd46d13bbb8bc4dca23733295dab6",
     "packages": [
         {
             "name": "barryvdh/laravel-cors",
-            "version": "v0.8.1",
+            "version": "v0.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-cors.git",
-                "reference": "1998c8c7295d167cb744bbc45fbefad9b86b836c"
+                "reference": "bc7f40a71221b46d24971da7f0230ed4a75a18c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/1998c8c7295d167cb744bbc45fbefad9b86b836c",
-                "reference": "1998c8c7295d167cb744bbc45fbefad9b86b836c",
+                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/bc7f40a71221b46d24971da7f0230ed4a75a18c6",
+                "reference": "bc7f40a71221b46d24971da7f0230ed4a75a18c6",
                 "shasum": ""
             },
             "require": {
@@ -28,7 +28,7 @@
                 "symfony/http-kernel": "~2.7|~3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.2"
+                "phpunit/phpunit": "^4.8|^5.2"
             },
             "type": "library",
             "extra": {
@@ -58,7 +58,7 @@
                 "crossdomain",
                 "laravel"
             ],
-            "time": "2016-06-22 06:36:34"
+            "time": "2016-08-11 08:46:01"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -215,6 +215,64 @@
             "time": "2015-11-06 14:35:42"
         },
         {
+            "name": "facebook/php-sdk-v4",
+            "version": "5.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/facebook/php-graph-sdk.git",
+                "reference": "7ed1ecdae6a5b2f8b8f60e132d06594b39b16fb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/7ed1ecdae6a5b2f8b8f60e132d06594b39b16fb1",
+                "reference": "7ed1ecdae6a5b2f8b8f60e132d06594b39b16fb1",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4|^7.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "~5.0",
+                "mockery/mockery": "~0.8",
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Facebook\\": "src/Facebook/"
+                },
+                "files": [
+                    "src/Facebook/polyfills.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Facebook Platform"
+            ],
+            "authors": [
+                {
+                    "name": "Facebook",
+                    "homepage": "https://github.com/facebook/facebook-php-sdk-v4/contributors"
+                }
+            ],
+            "description": "Facebook SDK for PHP",
+            "homepage": "https://github.com/facebook/facebook-php-sdk-v4",
+            "keywords": [
+                "facebook",
+                "sdk"
+            ],
+            "abandoned": "facebook/graph-sdk",
+            "time": "2016-08-09 11:32:26"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -361,16 +419,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.43",
+            "version": "v5.2.45",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5490b8f00564bb60839002f86828e27edd1e5610"
+                "reference": "2a79f920d5584ec6df7cf996d922a742d11095d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5490b8f00564bb60839002f86828e27edd1e5610",
-                "reference": "5490b8f00564bb60839002f86828e27edd1e5610",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2a79f920d5584ec6df7cf996d922a742d11095d1",
+                "reference": "2a79f920d5584ec6df7cf996d922a742d11095d1",
                 "shasum": ""
             },
             "require": {
@@ -451,7 +509,7 @@
                 "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~2.0).",
                 "symfony/css-selector": "Required to use some of the crawler integration testing tools (2.8.*|3.0.*).",
                 "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (2.8.*|3.0.*).",
-                "symfony/psr-http-message-bridge": "Required to psr7 bridging features (0.2.*)."
+                "symfony/psr-http-message-bridge": "Required to use psr7 bridging features (0.2.*)."
             },
             "type": "library",
             "extra": {
@@ -487,7 +545,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-08-10 12:23:59"
+            "time": "2016-08-26 11:44:52"
         },
         {
             "name": "league/flysystem",
@@ -2954,23 +3012,23 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.3.7",
+            "version": "1.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "4e8f0da10ac5802913afc151413bc8c53b6c2716"
+                "reference": "be2c607e43ce4c89ecd60e75c6a85c126e754aea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/4e8f0da10ac5802913afc151413bc8c53b6c2716",
-                "reference": "4e8f0da10ac5802913afc151413bc8c53b6c2716",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/be2c607e43ce4c89ecd60e75c6a85c126e754aea",
+                "reference": "be2c607e43ce4c89ecd60e75c6a85c126e754aea",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": "^5.3.3 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.4"
+                "phpunit/phpunit": "^4.8 || ^5.0"
             },
             "type": "library",
             "extra": {
@@ -3000,7 +3058,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2016-05-17 03:18:57"
+            "time": "2016-08-18 05:49:44"
         },
         {
             "name": "sebastian/exporter",

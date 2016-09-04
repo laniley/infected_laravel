@@ -18,8 +18,8 @@ class UserController extends Controller
         $users = new User();
 
         if(isset($fb_id)) {
-    			$users = $users->where('fb_id', $fb_id);
-    		}
+			$users = $users->where('fb_id', $fb_id);
+		}
 
         $users = $users->get();
 
@@ -44,7 +44,7 @@ class UserController extends Controller
         $user->last_name = $request->input('user.last_name');
         $user->gender = $request->input('user.gender');
         $user->locale = $request->input('user.locale');
-        $user->api_token = $request->header()["authorization"][0];
+        $user->access_token = str_replace("Bearer ", "", $request->header()["authorization"][0]);
         $user->save();
 
         return '{"user":'.$user.'}';

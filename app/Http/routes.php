@@ -14,12 +14,16 @@
 Route::group([
   'prefix' => '/api/',
   'middleware' => 'cors',
-  // 'middleware' => 'auth'
 ], function()
 {
     Route::resource('users', 'UserController');
-    Route::resource('infections', 'InfectionController');
-    Route::resource('infectionSkills', 'InfectionSkillController');
-    Route::resource('infectionSkillProgresses', 'InfectionSkillProgressController');
-    Route::resource('infectionSkillTypes', 'InfectionSkillTypeController');
+
+    Route::group([
+        'middleware' => 'auth.fb'
+    ], function() {
+        Route::resource('infections', 'InfectionController');
+        Route::resource('infectionSkills', 'InfectionSkillController');
+        Route::resource('infectionSkillProgresses', 'InfectionSkillProgressController');
+        Route::resource('infectionSkillTypes', 'InfectionSkillTypeController');
+    });
 });

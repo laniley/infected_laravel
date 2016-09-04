@@ -50,7 +50,10 @@ class InfectionSkillProgressController extends Controller
 
         	$infectionSkillProgress->id = $infectionSkillProgress->infection_id . "_" . $infectionSkillProgress->infection_skill_id;
 
-        	return '{ "infectionSkillProgress": '.$infectionSkillProgress.' }';
+			$owner_of_infection->eps = $owner_of_infection->eps - $infectionSkillProgress->progress;
+			$owner_of_infection->save();
+
+        	return '{ "infectionSkillProgress": '.$infectionSkillProgress.', "user": '.$owner_of_infection.' }';
       	}
       	else {
         	echo "not the same user";

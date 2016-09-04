@@ -15,4 +15,9 @@ class Infection extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+	public function wave()
+	{
+		return $this->hasOne('App\InfectionWave');
+	}
 }

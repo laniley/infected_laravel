@@ -44,7 +44,6 @@ class UserController extends Controller
         $user->last_name = $request->input('user.last_name');
         $user->gender = $request->input('user.gender');
         $user->locale = $request->input('user.locale');
-        $user->access_token = str_replace("Bearer ", "", $request->header()["authorization"][0]);
         $user->save();
 
         return '{"user":'.$user.'}';

@@ -23,7 +23,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'access_token',
+        // 'access_token',
     ];
 
     public function infections() {

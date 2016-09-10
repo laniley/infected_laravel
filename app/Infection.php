@@ -16,8 +16,13 @@ class Infection extends Model
         return $this->belongsTo('App\User');
     }
 
-	public function wave()
+	public function infectionSkillProgresses()
 	{
-		return $this->hasOne('App\InfectionWave');
+		return $this->hasMany('App\InfectionSkillProgress');
+	}
+
+	public function infectionWaves()
+	{
+		return $this->hasMany('App\InfectionWave');
 	}
 }

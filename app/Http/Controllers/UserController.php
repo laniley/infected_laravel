@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Log;
 
 use App\Http\Requests;
 use App\User;
@@ -24,8 +25,10 @@ class UserController extends Controller
         $users = $users->get();
 
         if(isset($mode) && $mode == "me" && count($users) > 0) {
-          $user = $users[0];
-          $infections = Infection::where('user_id', $user->id)->get();
+			$user = $users[0];
+			$infections = Infection::where('user_id', $user->id)
+				->with('infectionWaves', 'infectionWaves.infectionTransmissions')
+				->get();
         }
         else {
           $infections = '[]';

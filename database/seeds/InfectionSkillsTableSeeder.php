@@ -21,13 +21,19 @@ class InfectionSkillsTableSeeder extends Seeder
         // distribution skills
         InfectionSkill::create(array(
           'name' => 'reproduction rate',
-          'tooltip' => 'The reproduction rate defines how many people you can infect per day.',
+          'tooltip' => 'The reproduction rate defines how many people you can infect per wave.',
           'infection_skill_type_id' => 1
         ));
 
         InfectionSkill::create(array(
           'name' => 'incubation time',
-          'tooltip' => 'The incubation time decides how often you can start an infection wave. After every wave you have to wait for the incubation time to end.',
+          'tooltip' => 'The incubation time decides how often you can start an infection wave. After the start of a new wave, you have to wait for the incubation time to end before you can start the next one.',
+          'infection_skill_type_id' => 1
+        ));
+
+		InfectionSkill::create(array(
+          'name' => 'external survival',
+          'tooltip' => 'The capability of your infection to survive without a host. The higher this skill is, the longer an infection wave attack will stay active.',
           'infection_skill_type_id' => 1
         ));
 

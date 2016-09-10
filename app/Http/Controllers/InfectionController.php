@@ -68,6 +68,6 @@ class InfectionController extends Controller
 
     public function show($id) {
   		$infection = Infection::findOrFail($id);
-      return '{ "infection": '.$infection.' }';
+      	return '{ "infection": '.$infection.' }';
   	}
 }

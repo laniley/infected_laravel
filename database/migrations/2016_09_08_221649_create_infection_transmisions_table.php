@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInfectionWavesTable extends Migration
+class CreateInfectionTransmisionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,15 @@ class CreateInfectionWavesTable extends Migration
      */
     public function up()
     {
-        Schema::create('infection_waves', function (Blueprint $table) {
+        Schema::create('infection_transmissions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('infection_id')->unsigned();
+			$table->integer('infection_wave_id')->unsigned();
+			$table->string('fb_id');
 
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
-			$table->timestamp('ends_at');
 
-			$table->foreign('infection_id')->references('id')->on('infections');
+            $table->foreign('infection_wave_id')->references('id')->on('infection_waves');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateInfectionWavesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('infection_waves');
+        Schema::drop('infection_transmissions');
     }
 }

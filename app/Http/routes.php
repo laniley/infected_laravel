@@ -25,5 +25,7 @@ Route::group([
     ], function() {
         Route::resource('infections', 'InfectionController');
         Route::resource('infectionSkillProgresses', 'InfectionSkillProgressController');
+		Route::resource('infectionWaves', 'InfectionWaveController');
+		Route::resource('infectionTransmissions', 'InfectionTransmissionController');
     });
 });

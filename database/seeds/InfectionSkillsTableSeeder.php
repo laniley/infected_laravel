@@ -37,6 +37,12 @@ class InfectionSkillsTableSeeder extends Seeder
           'infection_skill_type_id' => 1
         ));
 
+		InfectionSkill::create(array(
+          'name' => 'contagiousness',
+          'tooltip' => 'The contagiousness affects the likelihood with which a transmission of your infection will infect someone.',
+          'infection_skill_type_id' => 1
+        ));
+
         // defense skills
         InfectionSkill::create(array(
           'name' => 'complexity',

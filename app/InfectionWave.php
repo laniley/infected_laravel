@@ -11,7 +11,7 @@ class InfectionWave extends Model
     ];
 
 	public function infection() {
-    	$this->belongsTo('App\Infection');
+    	return $this->belongsTo('App\Infection');
     }
 
 	public function infectionTransmissions()

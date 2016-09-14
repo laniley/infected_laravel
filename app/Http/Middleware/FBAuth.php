@@ -21,10 +21,10 @@ class FBAuth
     {
 		if ($_SERVER['REQUEST_METHOD'] !== 'OPTIONS') {
 
-			$auth_token = str_replace("Bearer ", "", $request->header()["authorization"][0]);
+			$auth_token_in_request = str_replace("Bearer ", "", $request->header()["authorization"][0]);
 
 			try {
-	        	$response = Facebook::get('/me', $auth_token);
+	        	$response = Facebook::get('/me', $auth_token_in_request);
 				// Convert the response to a `Facebook/GraphNodes/GraphUser` collection
        			$facebook_user = $response->getGraphUser();
 				$user = User::where('fb_id', $facebook_user["id"])->firstOrFail();

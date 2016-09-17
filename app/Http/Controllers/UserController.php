@@ -71,6 +71,16 @@ class UserController extends Controller
         return '{"user":'.$user.'}';
     }
 
+	public function updateTutorialStep(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->tutorial_step_id = $request->input('tutorial_step_id');
+        $user->save();
+
+        return '{"user":'.$user.'}';
+    }
+
+
     public function destroy($id)
     {
         //

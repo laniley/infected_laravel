@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
           $table->integer('max_infections')->default(1);
           $table->integer('eps')->default(5);
           $table->integer('rps')->default(5);
+		  $table->integer('tutorial_step_id')->nullable()->default(1);
 
           $table->timestamp('last_login_at')->default('0000-00-00 00:00:00');
           $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

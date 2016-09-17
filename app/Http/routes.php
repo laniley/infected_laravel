@@ -16,16 +16,17 @@ Route::group([
   'middleware' => 'cors',
 ], function()
 {
-    Route::resource('users', 'UserController');
-	Route::resource('infectionSkills', 'InfectionSkillController');
-	Route::resource('infectionSkillTypes', 'InfectionSkillTypeController');
-
     Route::group([
         'middleware' => 'auth.fb'
     ], function() {
+		Route::put('users/{id}/updateTutorialStep', 'UserController@updateTutorialStep');
         Route::resource('infections', 'InfectionController');
         Route::resource('infectionSkillProgresses', 'InfectionSkillProgressController');
 		Route::resource('infectionWaves', 'InfectionWaveController');
 		Route::resource('infectionTransmissions', 'InfectionTransmissionController');
     });
+
+	Route::resource('users', 'UserController');
+	Route::resource('infectionSkills', 'InfectionSkillController');
+	Route::resource('infectionSkillTypes', 'InfectionSkillTypeController');
 });

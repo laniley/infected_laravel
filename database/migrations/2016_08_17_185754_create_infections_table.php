@@ -15,7 +15,7 @@ class CreateInfectionsTable extends Migration
         Schema::create('infections', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('name', 50)->unique();
+            $table->string('name', 25)->unique();
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));

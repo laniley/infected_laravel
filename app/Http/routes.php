@@ -19,14 +19,16 @@ Route::group([
     Route::group([
         'middleware' => 'auth.fb'
     ], function() {
-		Route::put('users/{id}/updateTutorialStep', 'UserController@updateTutorialStep');
-        Route::resource('infections', 'InfectionController');
-        Route::resource('infectionSkillProgresses', 'InfectionSkillProgressController');
-		Route::resource('infectionWaves', 'InfectionWaveController');
-		Route::resource('infectionTransmissions', 'InfectionTransmissionController');
+	// 	Route::put('users/{id}/updateTutorialStep', 'UserController@updateTutorialStep');
+		Route::resource('userQuests', 'UserQuestController');
+
+		Route::resource('labs', 'LabController');
+
+        Route::resource('rockets', 'RocketController');
+		Route::resource('rocketComponents', 'RocketComponentController');
+		Route::resource('rocketComponentModels', 'RocketComponentModelController');
+		Route::resource('rocketComponentModelMms', 'RocketComponentModelMmController');
     });
 
 	Route::resource('users', 'UserController');
-	Route::resource('infectionSkills', 'InfectionSkillController');
-	Route::resource('infectionSkillTypes', 'InfectionSkillTypeController');
 });

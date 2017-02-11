@@ -26,6 +26,7 @@ Route::group([
 
         Route::resource('rockets', 'RocketController');
 		Route::resource('rocketComponents', 'RocketComponentController');
+        Route::resource('rocketComponentTypes', 'RocketComponentTypeController');
 		Route::resource('rocketComponentModels', 'RocketComponentModelController');
 		Route::resource('rocketComponentModelMms', 'RocketComponentModelMmController');
     });

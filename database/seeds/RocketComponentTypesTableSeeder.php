@@ -18,19 +18,19 @@ class RocketComponentTypesTableSeeder extends BaseSeeder {
     RocketComponentType::create(array(
       'type' => 'cannon',
       'costs' => 250,
-      'construction_time' => 120
+      'seconds_needed_for_construction' => 120
     ));
 
 	RocketComponentType::create(array(
       'type' => 'shield',
       'costs' => 500,
-      'construction_time' => 2400
+      'seconds_needed_for_construction' => 2400
     ));
 
 	RocketComponentType::create(array(
       'type' => 'engine',
       'costs' => 1000,
-      'construction_time' => 4800
+      'seconds_needed_for_construction' => 4800
     ));
   }
 

@@ -14,7 +14,7 @@ class AddExpLvlColumnsToUsersTable extends Migration {
 	{
 		Schema::table('users', function($table)
 		{
-		    $table->integer('experience')->default(0)->after('reached_level');
+		    $table->integer('experience')->default(0)->after('reached_stage');
 		});
 	}
 

@@ -22,7 +22,7 @@ class UserTableSeeder extends BaseSeeder {
       'last_name' => 'Mende',
       'score' => 0,
       'stars' => 0,
-      'reached_level' => 1,
+      'reached_stage' => 1,
       'first_login' => false
     ));
 
@@ -32,7 +32,7 @@ class UserTableSeeder extends BaseSeeder {
       'last_name' => 'Langhof',
       'score' => 0,
       'stars' => 0,
-      'reached_level' => 1,
+      'reached_stage' => 1,
       'first_login' => false
     ));
 

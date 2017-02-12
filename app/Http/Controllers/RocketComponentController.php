@@ -8,13 +8,14 @@ use DB;
 
 use App\Http\Requests;
 use App\User;
-use App\Rocket;
 use App\RocketComponent;
+use App\RocketComponentModel;
+use App\RocketComponentModelMm;
 
 class RocketComponentController extends Controller
 {
-    public function index(Request $request)
-    {
+    public function index(Request $request) {
+
 		$rocket_id	 = $request->input('rocket');
 		$type		 = $request->input('type');
 
@@ -32,25 +33,25 @@ class RocketComponentController extends Controller
 	    return '{ "rocketComponents": '.$rocketComponents.' }';
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
+
 		$rocketComponent = RocketComponent::firstOrCreate(array(
 			'rocket_id' => $request->input('rocketComponent.rocket_id'),
-       		'rocketComponentType_id' => $request->input('rocketComponent.type')
+       		'rocketComponentType_id' => $request->input('rocketComponent.rocketComponentType_id')
 		));
 
-    	$rocketComponent->costs = $request->input('rocketComponent.costs');
-    	$rocketComponent->construction_time = $request->input('rocketComponent.construction_time');
-    	$rocketComponent->construction_start = $request->input('rocketComponent.construction_start');
-    	$rocketComponent->status = $request->input('rocketComponent.status');
+		$rocketComponentModel = RocketComponentModel::where(array(
+    		'model' => 1,
+    		'rocketComponentType_id' => $request->input('rocketComponent.rocketComponentType_id')
+    	))->firstOrFail();
 
-		if($request->has('rocketComponent.selectedRocketComponentModelMm_id')) {
-			$selectedRocketComponentModelMm = RocketComponentModelMm::find($request->input('rocketComponent.selectedRocketComponentModelMm_id'));
+    	$rocketComponentModelMm = RocketComponentModelMm::firstOrCreate(array(
+    		'rocketComponent_id' => $rocketComponent->id,
+    		'rocketComponentModel_id' => $rocketComponentModel->id
+    	));
 
-			if($selectedRocketComponentModelMm) {
-				$rocketComponent->selectedRocketComponentModelMm_id = $selectedRocketComponentModelMm->id;
-			}
-		}
+
+		$rocketComponent->selectedRocketComponentModelMm_id = $rocketComponentModelMm->id;
 
     	$rocketComponent->save();
 

@@ -10,11 +10,16 @@ class RocketComponent extends Model {
 
 	protected $hidden = array('created_at', 'updated_at', 'myRocketComponentModelMms');
 
-	protected $fillable = array('rocket_id', 'type', 'selectedRocketComponentModelMm');
+	protected $fillable = array('rocket_id', 'rocketComponentType_id');
 
 	public function rocket()
   	{
       	return $this->belongsTo('App\Rocket');
+  	}
+
+  	public function rocketComponentType()
+  	{
+      	return $this->belongsTo('App\RocketComponentType');
   	}
 
   	public function selectedRocketComponentModelMm()
